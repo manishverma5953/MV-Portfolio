@@ -3,32 +3,22 @@ import { ArrowRight, ExternalLink, Github } from "lucide-react";
 const projects = [
   {
     id: 1,
-    title: "SaaS Landing Page",
-    description: "A beautiful landing page app using React and Tailwind.",
+    title: "Code With VermaJi",
+    description: "A full-stack EdTech platform built with React, Node.js, and MongoDB for seamless course uploads, access, and purchase.",
     image: "/projects/project1.png",
-    tags: ["React", "TailwindCSS", "Supabase"],
-    demoUrl: "#",
-    githubUrl: "#",
+    tags: ["React js", "Node.js", "RazorPay"],
+    demoUrl: "https://codewithvermaji.vercel.app/",
+    githubUrl: "https://github.com/manishverma5953/CodeWithVermaJi-FullStackProject",
   },
   {
     id: 2,
     title: "Orbit Analytics Dashboard",
     description:
-      "Interactive analytics dashboard with data visualization and filtering capabilities.",
+      "A modern SaaS landing page template built with React and Tailwind CSS, designed for showcasing AI-powered tools and startups.",
     image: "/projects/project2.png",
-    tags: ["TypeScript", "D3.js", "Next.js"],
-    demoUrl: "#",
-    githubUrl: "#",
-  },
-  {
-    id: 3,
-    title: "E-commerce Platform",
-    description:
-      "Full-featured e-commerce platform with user authentication and payment processing.",
-    image: "/projects/project3.png",
-    tags: ["React", "Node.js", "Stripe"],
-    demoUrl: "#",
-    githubUrl: "#",
+    tags: ["React js", "Vite", "Tailwind CSS"],
+    demoUrl: "https://xora-sass-page.vercel.app/",
+    githubUrl: "https://github.com/manishverma5953/XORA-sass-page",
   },
 ];
 
@@ -46,7 +36,7 @@ export const ProjectsSection = () => {
           crafted with attention to detail, performance, and user experience.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-16">
           {projects.map((project, key) => (
             <div
               key={key}
@@ -61,7 +51,7 @@ export const ProjectsSection = () => {
               </div>
 
               <div className="p-6">
-                <div className="flex flex-wrap gap-2 mb-4">
+                <div className="flex flex-wrap gap-2 mb-4 justify-center">
                   {project.tags.map((tag) => (
                     <span className="px-2 py-1 text-xs font-medium border rounded-full bg-secondary text-secondary-foreground">
                       {tag}
@@ -100,7 +90,7 @@ export const ProjectsSection = () => {
           <a
             className="cosmic-button w-fit flex items-center mx-auto gap-2"
             target="_blank"
-            href="https://github.com/machadop1407"
+            href="https://github.com/manishverma5953"
           >
             Check My Github <ArrowRight size={16} />
           </a>
