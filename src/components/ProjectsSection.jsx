@@ -12,7 +12,7 @@ const projects = [
   },
   {
     id: 2,
-    title: "Orbit Analytics Dashboard",
+    title: "Xora - AI Video Editing",
     description:
       "A modern SaaS landing page template built with React and Tailwind CSS, designed for showcasing AI-powered tools and startups.",
     image: "/projects/project2.png",
