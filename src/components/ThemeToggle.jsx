@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 
 export const ThemeToggle = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme");
@@ -14,6 +15,17 @@ export const ThemeToggle = () => {
       localStorage.setItem("theme", "light");
       setIsDarkMode(false);
     }
+
+    const handleScroll = () => {
+      if (window.scrollY > 10) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const toggleTheme = () => {
@@ -32,24 +44,15 @@ export const ThemeToggle = () => {
     <button
       onClick={toggleTheme}
       className={cn(
-        "fixed max-sm:hidden top-3.25 right-4 z-50 p-2 rounded-full transition-colors duration-300",
-        "focus:outlin-hidden cursor-pointer",
+        "fixed max-sm:hidden right-4 z-50 p-2 rounded-full transition-all duration-300",
+        "focus:outline-none cursor-pointer",
+        isScrolled ? "top-2.5" : "top-3.5" // slightly up on scroll
       )}
     >
       {isDarkMode ? (
-        <Sun
-          className={cn(
-            "h-6 w-6 transition-all duration-300",
-            "stroke-yellow-300 hover:fill-yellow-300",
-          )}
-        />
+        <Sun className="h-6 w-6 stroke-yellow-300 hover:fill-yellow-300 transition-all duration-300" />
       ) : (
-        <Moon
-          className={cn(
-            "h-6 w-6 transition-all duration-300",
-            "stroke-blue-900 hover:fill-blue-900",
-          )}
-        />
+        <Moon className="h-6 w-6 stroke-blue-900 hover:fill-blue-900 transition-all duration-300" />
       )}
     </button>
   );
